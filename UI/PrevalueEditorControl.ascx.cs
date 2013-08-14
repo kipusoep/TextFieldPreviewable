@@ -19,8 +19,6 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 		public int BoxWidth { get { return int.Parse(tbBoxWidth.Text); } }
 		public int BoxHeight { get { return int.Parse(tbBoxHeight.Text); } }
 
-		protected double BoxOpacity { get { return .5; } }
-
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);

@@ -3,11 +3,8 @@
 <%@ Import Namespace="InfoCaster.Umbraco.TextFieldPreviewable" %>
 
 <link rel="stylesheet" type="text/css" href="<%= Page.ClientScript.GetWebResourceUrl(typeof(TextFieldPreviewableResources), "InfoCaster.Umbraco.TextFieldPreviewable.UI.res.css.textfieldpreviewable.css") %>" />
-<style type="text/css">
-	#previewBox { -webkit-opacity: <%= BoxOpacity %>; -khtml-opacity: <%= BoxOpacity %>; -moz-opacity: <%= BoxOpacity %>; opacity: <%= BoxOpacity %>; -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=<%= BoxOpacity * 100 %>)"; filter: ~"alpha(opacity=<%= BoxOpacity * 100 %>)"; }
-</style>
 
-<div class="propertyItem" style="display: none;">
+<div class="propertyItem">
 	<div class="propertyItemheader">
 		<label for="<%= ddlFontFamily.ClientID %>">Font-family:</label>
 	</div>

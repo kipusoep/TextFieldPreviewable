@@ -22,6 +22,15 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI {
         protected global::System.Web.UI.WebControls.DropDownList ddlFontFamily;
         
         /// <summary>
+        /// pnlFontSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlFontSize;
+        
+        /// <summary>
         /// tbFontSize control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbFontSize;
+        
+        /// <summary>
+        /// pnlLineHeight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlLineHeight;
         
         /// <summary>
         /// tbLineHeight control.
@@ -40,13 +58,13 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI {
         protected global::System.Web.UI.WebControls.TextBox tbLineHeight;
         
         /// <summary>
-        /// ddlFontWeight control.
+        /// rblFontWeight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFontWeight;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblFontWeight;
         
         /// <summary>
         /// tbBoxWidth control.

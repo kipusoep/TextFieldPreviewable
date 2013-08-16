@@ -1,5 +1,8 @@
-﻿#previewBox, .previewBox { position: relative; width: 0; height: 0; display: none; background-color: green; border: 1px solid black; z-index: 100; margin-top: 10px;
+﻿.previewBox { position: relative; width: 0; height: 0; display: none; background-color: green; border: 1px solid black; z-index: 100; margin-top: 10px;
 	-webkit-opacity: .5; -khtml-opacity: .5; -moz-opacity: .5; opacity: .5; -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=50)"; filter: ~"alpha(opacity=50)";
 }
-#previewBox div, .previewBox div { word-wrap: break-word; }
+.previewBox div { word-wrap: break-word; }
 input.small { width: 40px; }
+
+.ui-slider { float: left; width: 193px; }
+.jqueryui-slider-textbox { float: left; width: 20px; margin-left: 10px; margin-top: -3px; text-align: center; }

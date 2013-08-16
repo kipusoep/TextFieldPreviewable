@@ -9,13 +9,16 @@ using System.Web.UI.WebControls;
 
 namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 {
+	[ClientDependency.Core.ClientDependency(ClientDependency.Core.ClientDependencyType.Javascript, "ui/jqueryui.js", "UmbracoClient")]
+	[ClientDependency.Core.ClientDependency(ClientDependency.Core.ClientDependencyType.Javascript, "ui/jquery.alphanumeric.js", "UmbracoClient")]
+	[ClientDependency.Core.ClientDependency(ClientDependency.Core.ClientDependencyType.Css, "DateTimePicker/datetimepicker.css", "UmbracoClient")]
 	public partial class PrevalueEditorControl : UserControl
 	{
 		public PrevalueEditor PrevalueEditor { get; set; }
 		public string FontFamily { get { return ddlFontFamily.SelectedValue; } }
 		public int FontSize { get { return int.Parse(tbFontSize.Text); } }
 		public int LineHeight { get { return int.Parse(tbLineHeight.Text); } }
-		public string FontWeight { get { return ddlFontWeight.SelectedValue; } }
+		public string FontWeight { get { return rblFontWeight.SelectedValue; } }
 		public int BoxWidth { get { return int.Parse(tbBoxWidth.Text); } }
 		public int BoxHeight { get { return int.Parse(tbBoxHeight.Text); } }
 
@@ -36,11 +39,9 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 				ddlFontFamily.SelectedValue = PrevalueEditor.Configuration.FontFamily;
 				tbFontSize.Text = PrevalueEditor.Configuration.FontSize.ToString();
 				tbLineHeight.Text = PrevalueEditor.Configuration.LineHeight.ToString();
-				ddlFontWeight.SelectedValue = PrevalueEditor.Configuration.FontWeight.ToString();
+				rblFontWeight.SelectedValue = PrevalueEditor.Configuration.FontWeight.ToString();
 				tbBoxWidth.Text = PrevalueEditor.Configuration.BoxWidth.ToString();
 				tbBoxHeight.Text = PrevalueEditor.Configuration.BoxHeight.ToString();
-
-				ScriptManager.RegisterStartupScript(this, this.GetType(), "updateTextFieldPreviewable", "updateTextFieldPreviewable();", true);
 			}
 		}
 	}

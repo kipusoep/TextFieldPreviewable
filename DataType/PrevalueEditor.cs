@@ -78,6 +78,8 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.DataType
 				BoxWidth = prevalueEditorControl.BoxWidth,
 				BoxHeight = prevalueEditorControl.BoxHeight
 			};
+			TextMode textMode;
+			prevalueModel.TextMode = Enum.TryParse<TextMode>(prevalueEditorControl.TextMode, out textMode) ? textMode : TextMode.SingleLine;
 			FontWeight fontWeight;
 			prevalueModel.FontWeight = Enum.TryParse<FontWeight>(prevalueEditorControl.FontWeight, true, out fontWeight) ? fontWeight : FontWeight.Normal;
  

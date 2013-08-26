@@ -69,10 +69,14 @@
     <Reference Include="umbraco.DataLayer">
       <HintPath>lib\umbraco.DataLayer.dll</HintPath>
     </Reference>
+    <Reference Include="umbraco.editorControls">
+      <HintPath>lib\umbraco.editorControls.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmbeddedResourcesVirtualPathProvider.cs" />
     <Compile Include="DataType\DataEditor.cs" />
+    <Compile Include="Models\TextMode.cs" />
     <Compile Include="Models\FontWeights.cs" />
     <Compile Include="Models\TextFieldPreviewablePrevalueModel.cs" />
     <Compile Include="PreApplicationStart.cs" />

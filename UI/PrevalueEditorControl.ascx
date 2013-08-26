@@ -6,6 +6,12 @@
 
 <div class="propertyItem">
 	<div class="propertyItemheader">
+		<label for="<%= ddlTextMode.ClientID %>">Text-mode:</label>
+	</div>
+	<asp:DropDownList runat="server" ID="ddlTextMode" EnableViewState="false" />
+</div>
+<div class="propertyItem">
+	<div class="propertyItemheader">
 		<label for="<%= ddlFontFamily.ClientID %>">Font-family:</label>
 	</div>
 	<asp:DropDownList runat="server" ID="ddlFontFamily" EnableViewState="false" />

@@ -18,7 +18,7 @@
 
 		var updatePreview = function () {
 			if (updatePreviewEnabled) {
-				$previewBoxInner.html($textBox.val());
+				$previewBoxInner.html($textBox.val().replace(/\r/g, "").replace(/\n/g, "<br />"));
 				if ($previewBoxInner.height() > $previewBox.height()) {
 					if ($previewBox.css("background-color") != red) {
 						$previewBox.stop(true, false).animate({
@@ -48,20 +48,22 @@
 
 		// Cache DOM elements
 		$textBox = $this.find("input");
+		if (!$textBox.length)
+			$textBox = $this.find("textarea");
 		$previewBox = $this.find(".previewBox");
 		$previewBoxInner = $previewBox.children();
 		$previewBoxInner.html($textBox.val());
 
 		// DOM event wire ups
 		$textBox.on("focus", function () {
-			$previewBox.stop(true, true).show(500, function () {
+			$previewBox.stop(true, true).fadeIn(500, function () {
 				updatePreviewEnabled = true;
 				updatePreview();
 			});
 		});
 		$textBox.on("blur", function () {
 			updatePreviewEnabled = false;
-			$previewBox.stop(true, true).hide(500);
+			$previewBox.stop(true, true).fadeOut(500);
 		});
 		$textBox.on("keydown keyup change", updatePreview);
 	}

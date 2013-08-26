@@ -7,6 +7,7 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.Models
 {
 	public class TextFieldPreviewablePrevalueModel
 	{
+		public TextMode TextMode { get; set; }
 		public string FontFamily { get; set; }
 		public int FontSize { get; set; }
 		public int LineHeight { get; set; }
@@ -19,12 +20,13 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.Models
 			get
 			{
 				return new TextFieldPreviewablePrevalueModel()
-					{
-						FontFamily = "Arial",
-						FontSize = 12,
-						LineHeight = 12,
-						FontWeight = FontWeight.Normal
-					};
+				{
+					TextMode = TextMode.SingleLine,
+					FontFamily = "Arial",
+					FontSize = 12,
+					LineHeight = 12,
+					FontWeight = FontWeight.Normal
+				};
 			}
 		}
 	}

@@ -5,6 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using umbraco.editorControls.simpleEditor;
+using umbraco.editorControls.tinyMCE3;
+using umbraco.interfaces;
 
 namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 {
@@ -12,10 +15,26 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 	{
 		public string Text
 		{
-			get { return tbTextBox.Text; }
-			set { tbTextBox.Text = value; }
+			get { return DataEditor.TextFieldPreviewablePrevalueModel.TextMode == Models.TextMode.SingleLine ? tbTextBox.Text : _simpleEditor.Text; }
+			set { tbTextBox.Text = _simpleEditor.Text = value; }
 		}
-		public DataEditor DataEditor { get; set; }
+		public DataEditor DataEditor
+		{
+			get
+			{
+				return _dataEditor;
+			}
+			set
+			{
+				_dataEditor = value;
+
+				if (_simpleEditor == null)
+					_simpleEditor = new SimpleEditor(DataEditor.Data);
+			}
+		}
+
+		DataEditor _dataEditor;
+		SimpleEditor _simpleEditor;
 
 		protected override void OnLoad(EventArgs e)
 		{
@@ -23,6 +42,18 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 
 			if (!IsPostBack && DataEditor.Data != null && DataEditor.Data.Value != null)
 				tbTextBox.Text = DataEditor.Data.Value.ToString();
+
+			if (DataEditor.TextFieldPreviewablePrevalueModel.TextMode != Models.TextMode.SingleLine)
+			{
+				switch (DataEditor.TextFieldPreviewablePrevalueModel.TextMode)
+				{
+					case Models.TextMode.MultiLine:
+						if (phSimpleEditor.Controls.Count == 0)
+							phSimpleEditor.Controls.Add(_simpleEditor);
+						mvEditors.SetActiveView(vwEditorsSimpleEditor);
+						break;
+				}
+			}
 		}
 	}
 }

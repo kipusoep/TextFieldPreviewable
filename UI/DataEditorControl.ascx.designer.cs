@@ -22,6 +22,24 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI {
         protected global::System.Web.UI.WebControls.Panel pnlTextFieldPreviewable;
         
         /// <summary>
+        /// mvEditors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView mvEditors;
+        
+        /// <summary>
+        /// vwEditorsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View vwEditorsTextBox;
+        
+        /// <summary>
         /// tbTextBox control.
         /// </summary>
         /// <remarks>
@@ -29,5 +47,41 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTextBox;
+        
+        /// <summary>
+        /// vwEditorsSimpleEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View vwEditorsSimpleEditor;
+        
+        /// <summary>
+        /// phSimpleEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phSimpleEditor;
+        
+        /// <summary>
+        /// vwEditorsRichTextEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View vwEditorsRichTextEditor;
+        
+        /// <summary>
+        /// phRichTextEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phRichTextEditor;
     }
 }

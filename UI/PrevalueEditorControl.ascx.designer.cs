@@ -13,6 +13,15 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI {
     public partial class PrevalueEditorControl {
         
         /// <summary>
+        /// ddlTextMode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTextMode;
+        
+        /// <summary>
         /// ddlFontFamily control.
         /// </summary>
         /// <remarks>

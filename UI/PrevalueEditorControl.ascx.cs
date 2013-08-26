@@ -15,6 +15,7 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 	public partial class PrevalueEditorControl : UserControl
 	{
 		public PrevalueEditor PrevalueEditor { get; set; }
+		public string TextMode { get { return ddlTextMode.SelectedValue; } }
 		public string FontFamily { get { return ddlFontFamily.SelectedValue; } }
 		public int FontSize { get { return int.Parse(tbFontSize.Text); } }
 		public int LineHeight { get { return int.Parse(tbLineHeight.Text); } }
@@ -26,16 +27,21 @@ namespace InfoCaster.Umbraco.TextFieldPreviewable.UI
 		{
 			base.OnLoad(e);
 
+			ddlTextMode.DataSource = Enum.GetValues(typeof(Models.TextMode));
+			ddlTextMode.DataBind();
+
 			InstalledFontCollection installedFontCollection = new InstalledFontCollection();
 			ddlFontFamily.DataSource = installedFontCollection.Families.Select(x => x.Name);
 			ddlFontFamily.DataBind();
 
 			if (PrevalueEditor.Configuration == null)
 			{
+				ddlTextMode.SelectedValue = Models.TextMode.SingleLine.ToString();
 				ddlFontFamily.SelectedValue = "Arial";
 			}
 			else
 			{
+				ddlTextMode.SelectedValue = PrevalueEditor.Configuration.TextMode.ToString();
 				ddlFontFamily.SelectedValue = PrevalueEditor.Configuration.FontFamily;
 				tbFontSize.Text = PrevalueEditor.Configuration.FontSize.ToString();
 				tbLineHeight.Text = PrevalueEditor.Configuration.LineHeight.ToString();
